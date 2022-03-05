@@ -7,7 +7,7 @@
   </div>
 </template>
 
-<script type="ts">
+<script>
 import { Component, Vue } from 'vue-property-decorator';
 import TopBar from '@/components/common/TopBar.vue';
 

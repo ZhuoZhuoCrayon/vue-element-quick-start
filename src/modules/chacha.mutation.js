@@ -5,10 +5,10 @@ const state = {
 };
 
 const mutations = {
-  [types.INCREMENT](data: any) {
+  [types.INCREMENT](data) {
     data.count += 1;
   },
-  [types.DECREMENT](data: any) {
+  [types.DECREMENT](data) {
     data.count -= 1;
   },
 };

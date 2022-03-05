@@ -10,15 +10,18 @@
   </div>
 </template>
 
-<script type="ts">
+<script>
   import { mapGetters, mapActions } from 'vuex';
-
+  import exampleApi from '@/api/example'
   export default {
     data() {
       return {
         hello: 'Hello World',
         count: 0,
       };
+    },
+    created() {
+      this.doCelery()
     },
     computed: {
       ...mapGetters({
@@ -30,6 +33,18 @@
         increment: 'increment',
         decrement: 'decrement',
       }),
+      doCelery () {
+        console.log(exampleApi.CommonCeleryDelay)
+        this.axios.post(exampleApi.CommonCeleryDelay, {
+          left_val: 1,
+          right_val: 2,
+          operate: "add",
+        }).then(
+          resp => {
+            console.log(resp.data.task_id);
+          }
+        );
+      },
     },
     watch: {
       countNum(val) {
@@ -51,7 +66,7 @@
       margin: 200px auto;
       text-align: center;
       font-size: 16px;
-      color: #fff;
+      // color: #fff;
 
       span {
         font-size: 28px;
@@ -69,7 +84,7 @@
         font-size: 20px;
         font-weight: bold;
         border-radius: 50%;
-        background-color: #fff;
+        // background-color: #fff;
       }
     }
   }

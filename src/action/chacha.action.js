@@ -1,9 +1,9 @@
 import * as types from '../modules/mutation-types';
 
-export const increment = ({ commit }: any) => {
+export const increment = ({ commit }) => {
   commit(types.INCREMENT);
 };
 
-export const decrement = ({ commit }: any) => {
+export const decrement = ({ commit }) => {
   commit(types.DECREMENT);
 };
